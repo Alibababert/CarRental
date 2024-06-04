@@ -1,0 +1,26 @@
+﻿<Window x:Class="CarRental.View.RentCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarRental.ViewModels"
+        mc:Ignorable="d"
+        Title="RentCar" Height="450" Width="800">
+    <Window.DataContext>
+        <local:RentCarViewModel></local:RentCarViewModel></Window.DataContext>
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,50,0,0" TextWrapping="Wrap" Text="{Binding RegNr, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,90,0,0" TextWrapping="Wrap" Text="{Binding PersNr, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="170,130,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding BilKategorier}" SelectedItem="{Binding BilKat}"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="170,170,0,0" TextWrapping="Wrap" Text="{Binding Matarställning, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Start Renting" Click="OnStartRentingClicked" HorizontalAlignment="Left" Margin="170,278,0,0" VerticalAlignment="Top" Width="75"/>
+        
+        <TextBlock HorizontalAlignment="Left" Margin="80,53,0,0" TextWrapping="Wrap" Text="RegNr" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="80,93,0,0" TextWrapping="Wrap" Text="PersNr" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="80,133,0,0" TextWrapping="Wrap" Text="BilKategori" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="80,173,0,0" TextWrapping="Wrap" Text="Mätarställning" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="384,88,0,0" TextWrapping="Wrap" Text="{Binding ResultText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
